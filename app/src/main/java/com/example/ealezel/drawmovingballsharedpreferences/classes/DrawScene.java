@@ -8,6 +8,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.example.ealezel.drawmovingballsharedpreferences.R;
@@ -90,6 +91,14 @@ public class DrawScene extends View {
 
         h.postDelayed(r, FRAME_RATE);
     }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        x = (int)event.getX();
+        y = (int) event.getY();
+        return true;
+    }
+
+
     public int getPositionX()
     {
         return x;
@@ -99,3 +108,5 @@ public class DrawScene extends View {
         return y;
     }
 }
+
+
